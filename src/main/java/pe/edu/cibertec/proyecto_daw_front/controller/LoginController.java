@@ -16,6 +16,8 @@ import pe.edu.cibertec.proyecto_daw_front.viewModel.LoginModel;
 
 import java.util.ArrayList;
 
+//https://app-proyecto-backend.azurewebsites.net/
+
 @Controller
 @RequestMapping("/login")
 public class LoginController {
@@ -62,7 +64,7 @@ public class LoginController {
                 //
                 if(loginResponseDTO.code().equals("00")){
 
-                    ArrayList<String> grupo5 = restTemplateConfig.getForObject("/integrantes", ArrayList.class);
+                    ArrayList<String> grupo5 = restTemplateConfig.getForObject("/auth/integrantes", ArrayList.class);
 
                     System.out.println(grupo5.toString());
                     model.addAttribute("grupo5", grupo5);

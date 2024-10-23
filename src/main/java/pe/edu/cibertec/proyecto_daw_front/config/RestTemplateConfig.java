@@ -12,7 +12,7 @@ public class RestTemplateConfig {
     @Bean
     public RestTemplate restTemplateListado(RestTemplateBuilder builder) {
         return builder
-                .rootUri("https://app-proyecto-backend.azurewebsites.net/auth")
+                .rootUri("https://app-proyecto-backend.azurewebsites.net")
                 .build();
     }
 

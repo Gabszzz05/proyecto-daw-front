@@ -11,13 +11,13 @@ import pe.edu.cibertec.proyecto_daw_front.dto.LoginResponseDTO;
 import java.util.ArrayList;
 
 //Asociamos la clase config al Feign
-@FeignClient(name = "autenticacion", url = "https://app-proyecto-backend.azurewebsites.net/auth")
+@FeignClient(name = "autenticacion", url = "https://app-proyecto-backend.azurewebsites.net")
 public interface AuthClient {
     //Firma del login
-    @PostMapping("/login")
+    @PostMapping("/auth/login")
     ResponseEntity<LoginResponseDTO> login(@RequestBody LoginRequestDTO loginRequestDTO);
 
-    @GetMapping("/integrantes")
+    @GetMapping("/auth/integrantes")
     ArrayList<String> integrantes();
 
 }
