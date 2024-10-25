@@ -8,29 +8,21 @@
     <link rel="stylesheet" th:href="@{/css/principal.css}">
 </head>
 <body>
-
+<style>
+    .container{
+        display: flex;
+        justify-content: space-around;
+    }
+</style>
 <div class="container">
-    <div class="mt-5 mb-4">
-        <h1>Home</h1>
-    </div>
-
-    <div class="alert alert-success" role="alert" th:if="${loginModel.code == '00'}">
-        Bienvenido <span th:text="${loginModel.alumno}"></span>
-    </div>
 
     <div class="card">
-        <h2 class="card-title">Integrantes del Grupo 05</h2>
+        <h2 class="card-title">Integrantes del Grupo 03</h2>
         <ul class="list-group list-group-flush">
-            <li class="list-group-item">1. Nombres y apellidos</li>
-            <li class="list-group-item">2. Nombres y apellidos</li>
-            <li class="list-group-item">3. Nombres y apellidos</li>
-            <li class="list-group-item">4. Nombres y apellidos</li>
-            <li class="list-group-item">5. Nombres y apellidos</li>
-            <li class="list-group-item">6. Nombres y apellidos</li>
+            <li th:each="nombre : ${grupo5}" th:text="${nombre}"></li>
         </ul>
     </div>
 
 </div>
-
 </body>
 </html>
